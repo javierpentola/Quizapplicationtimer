@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url('https://unpkg.com/nes.css/css/nes.min.css');
+
+body {
+    background: #000;
+    font-family: 'Poppins', sans-serif;
+}
+
+::selection {
+    color: #fff;
+    background: #007bff;
+}
+
+.start_btn,
+.info_box,
+.quiz_box,
+.result_box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: none;
+    border: 4px solid #000;
+    box-shadow: 0 8px #000;
+    padding: 20px;
+    background: #fff;
+}
+
+.info_box.activeInfo,
+.quiz_box.activeQuiz,
+.result_box.activeResult {
+    opacity: 1;
+    z-index: 5;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.start_btn button {
+    font-size: 25px;
+    font-weight: 500;
+    color: #007bff;
+    padding: 15px 30px;
+    border: 4px solid #000;
+    background: #fff;
+    cursor: pointer;
+    box-shadow: 0 4px #000;
+}
+
+.info_box,
+.quiz_box,
+.result_box {
+    width: 540px;
+    background: #fff;
+    border-radius: 5px;
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.info_box .info-title,
+.quiz_box header .title,
+.result_box .complete_text {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    border-bottom: 4px solid #000;
+    padding-bottom: 10px;
+}
+
+.info_box .info-list,
+.quiz_box section,
+.result_box .score_text {
+    padding: 15px 30px;
+}
+
+.info_box .info-list .info,
+.quiz_box section .que_text,
+.result_box .score_text span {
+    font-size: 17px;
+}
+
+.info_box .buttons,
+.result_box .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-top: 20px;
+    border-top: 4px solid #000;
+}
+
+.info_box .buttons button,
+.result_box .buttons button {
+    margin: 0 5px;
+    height: 40px;
+    width: 100px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 4px solid #000;
+    box-shadow: 0 4px #000;
+}
+
+.quiz_box header {
+    position: relative;
+    z-index: 2;
+    height: 70px;
+    padding: 0 30px;
+    background: #fff;
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 4px solid #000;
+    box-shadow: none;
+}
+
+.quiz_box header .timer {
+    color: #004085;
+    background: #cce5ff;
+    border: 4px solid #000;
+    height: 45px;
+    padding: 0 8px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 145px;
+    box-shadow: 0 4px #000;
+}
+
+.quiz_box header .timer .time_left_txt,
+.quiz_box header .timer .timer_sec {
+    user-select: none;
+}
+
+.quiz_box header .time_line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: #007bff;
+}
+
+.quiz_box section .option_list {
+    padding: 20px 0;
+}
+
+.quiz_box section .option_list .option {
+    background: aliceblue;
+    border: 4px solid #000;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 17px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px #000;
+    transition: background 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+.quiz_box section .option_list .option:hover {
+    color: #004085;
+    background: #cce5ff;
+    border-color: #b8daff;
+}
+
+footer {
+    height: 60px;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 4px solid #000;
+}
+
+footer .total_que {
+    display: flex;
+    align-items: center;
+}
+
+footer .total_que span {
+    display: flex;
+    user-select: none;
+    align-items: center;
+    font-size: 18px;
+}
+
+footer .total_que span p {
+    margin: 0 5px;
+}
+
+footer button {
+    height: 40px;
+    padding: 0 13px;
+    font-size: 18px;
+    font-weight: 400;
+    cursor: pointer;
+    border-radius: 5px;
+    background: #007bff;
+    color: #fff;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.95);
+    transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease;
+    border: 4px solid #000;
+    box-shadow: 0 4px #000;
+}
+
+footer button.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+}
